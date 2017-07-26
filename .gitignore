@@ -1,2 +1,4 @@
 *.swp
 lor
+.rubocop_todo.yml
+coverage
