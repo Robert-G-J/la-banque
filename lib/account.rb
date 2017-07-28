@@ -10,6 +10,7 @@ class Account
     raise('Invalid entry') if !value.is_a? Integer
     raise('Invalid entry') if value < 0
     self.balance += value
+    puts "Deposit successful. Balance £#{self.balance}"
   end
 
   private

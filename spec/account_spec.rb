@@ -16,5 +16,9 @@ describe Account do
     it 'changes balance' do
       expect { account.make_deposit(1000) }.to change { account.balance }
     end
+
+    it 'outputs success message to stdout' do
+     expect{ account.make_deposit(1000) }.to output("Deposit successful. Balance £1000\n").to_stdout
+    end
   end
 end
