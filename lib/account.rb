@@ -7,13 +7,25 @@ class Account
   end
 
   def make_deposit(value)
-    raise('Invalid entry') if !value.is_a? Integer
-    raise('Invalid entry') if value < 0
-    self.balance += value
-    puts "Deposit successful. Balance £#{self.balance}"
+    check_deposit_valid(value)
+    increment_balance(value)
+    print_deposit_success
   end
 
   private
 
   attr_writer :balance
+
+  def print_deposit_success
+    puts "Deposit successful. Balance £#{self.balance}"
+  end  
+
+  def check_deposit_valid(value)
+    raise('Invalid entry') if !value.is_a? Integer
+    raise('Invalid entry') if value < 0
+  end
+
+  def increment_balance(value)
+    self.balance += value
+  end
 end
